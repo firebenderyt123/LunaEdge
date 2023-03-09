@@ -15,6 +15,7 @@ module.exports = {
     config.resolve.alias["@config"] = path.join(__dirname, "src/config");
     config.resolve.alias["@pages"] = path.join(__dirname, "src/pages");
     config.resolve.alias["@store"] = path.join(__dirname, "src/store");
+    config.resolve.alias["@styles"] = path.join(__dirname, "src/styles");
 
     return config;
   },

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { searchMovies } from "@store/effects/movieEffects/searchMovies";
 
-export default function Search() {
+const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
 
@@ -24,10 +24,12 @@ export default function Search() {
           placeholder="Search movies"
           className="form-control"
         />
-        <button className="btn btn-primary" type="submit">
+        <button className="btn btn-dark" type="submit">
           Search
         </button>
       </form>
     </div>
   );
-}
+};
+
+export default Search;

@@ -4,7 +4,7 @@ import {
   searchMoviesSuccess,
   searchMoviesFailure,
 } from "@store/actions/movieActions/searchMovies";
-import { AppThunk } from "@store/types/searchMovies";
+import { AppThunk } from "@store/types/Movie";
 import { searchMovies as searchMoviesApi } from "@api/omdbApi";
 
 export const searchMovies = (query: string): AppThunk => {

@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { Layout } from "@components/simple";
+import { Layout } from "@components/ordinary";
 import { HugeSearch, MovieList } from "@components/smart";
 
 const Home: NextPage = () => {

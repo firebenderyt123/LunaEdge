@@ -1,0 +1,26 @@
+/* poster */
+.poster {
+  height: fit-content;
+  width: fit-content;
+
+  .rate-mark {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    box-shadow: 0 0 20px 0px #ffbe0b;
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+@media (min-width: 575px) {
+  .poster {
+    img {
+      max-width: 300px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.card-poster {
+	height: 290px;
+	overflow: hidden;
+
+	img {
+		object-fit: cover;
+		object-position: top;
+	}
+}
+
+@media (min-width: 575px) {
+	.card-poster {
+		height: 250px;
+	}
+}

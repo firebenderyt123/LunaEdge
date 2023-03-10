@@ -2,10 +2,13 @@ import React from "react";
 import { Image } from "@components/ui";
 import Link from "next/link";
 
-export default function MovieCard({ movie }) {
+const MovieCard = ({ movie }) => {
   return (
-    <div id={`movie-${movie.imdbID}`} className="card max-w-300 m-auto h-100">
-      <div className="card-poster position-relative">
+    <div
+      id={`movie-${movie.imdbID}`}
+      className="card border-0 max-w-300 m-auto h-100"
+    >
+      <div className="card-poster position-relative rounded-top">
         <Link href={`/movies/${movie.imdbID}`}>
           <Image
             src={movie.Poster}
@@ -31,4 +34,6 @@ export default function MovieCard({ movie }) {
       </div>
     </div>
   );
-}
+};
+
+export default MovieCard;

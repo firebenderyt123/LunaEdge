@@ -1,3 +1,5 @@
+@import "~@styles/globals.scss";
+
 /* poster */
 .poster {
   height: fit-content;
@@ -7,7 +9,7 @@
     position: absolute;
     bottom: 30px;
     right: 20px;
-    box-shadow: 0 0 20px 0px #ffbe0b;
+    box-shadow: 0 0 20px 0px $dark-shadow;
   }
 
   img {

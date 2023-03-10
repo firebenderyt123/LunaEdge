@@ -1,14 +1,22 @@
 import { Action, ActionTypes } from "@store/actions/movieActions/searchMovies";
-import { Movie } from "@types/Movie";
+import { Movie } from "@store/types/Movie";
 
 export interface State {
-  movies: Movie[];
+  movies: {
+    Response: boolean;
+    Search: Movie[];
+    totalResults: number;
+  };
   loading: boolean;
   error: string | null;
 }
 
 export const initialState: State = {
-  movies: [],
+  movies: {
+    Response: null,
+    Search: [],
+    totalResults: 0,
+  },
   loading: false,
   error: null,
 };

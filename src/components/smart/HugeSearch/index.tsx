@@ -32,8 +32,6 @@ const HugeSearch: React.FC = () => {
     setTotalResults(movies.totalResults);
   }, [movies.totalResults]);
 
-  console.log(currentPage, totalPages, handlePageClick);
-
   return (
     <>
       <div className="w-100 my-5">

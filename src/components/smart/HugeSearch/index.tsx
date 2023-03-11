@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchMovies } from "@store/effects/movieEffects/searchMovies";
-import { postsPerPage } from "@config/siteConfig";
+import { postsPerPage, maxPagination } from "@config/siteConfig";
 import { MovieList } from "@components/ordinary";
+import { Pagination } from "@components/simple";
 
 const HugeSearch: React.FC = () => {
   const { movies, loading, error } = useSelector((state) => state.searchMovies);
@@ -12,14 +13,13 @@ const HugeSearch: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
 
-  console.log(totalResults);
-
   const totalPages = Math.ceil(totalResults / postsPerPage);
 
   const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (searchTerm) {
-      dispatch(searchMovies(searchTerm, currentPage));
+      setCurrentPage(1);
+      dispatch(searchMovies(searchTerm, 1));
     }
   };
 
@@ -31,6 +31,8 @@ const HugeSearch: React.FC = () => {
   useEffect(() => {
     setTotalResults(movies.totalResults);
   }, [movies.totalResults]);
+
+  console.log(currentPage, totalPages, handlePageClick);
 
   return (
     <>
@@ -52,19 +54,11 @@ const HugeSearch: React.FC = () => {
         <MovieList movies={movies.Search} loading={loading} error={error} />
       )}
       {totalResults > 0 && (
-        <div className="pagination">
-          {Array.from({ length: totalPages }, (_, i) => ++i).map(
-            (pageNumber) => (
-              <button
-                key={pageNumber}
-                disabled={currentPage === pageNumber}
-                onClick={() => handlePageClick(pageNumber)}
-              >
-                {pageNumber}
-              </button>
-            )
-          )}
-        </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          handlePageClick={handlePageClick}
+        />
       )}
     </>
   );

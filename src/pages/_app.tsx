@@ -7,11 +7,11 @@ import "@styles/movieCard.scss";
 import "@styles/moviePage.scss";
 
 function App({ Component, pageProps }: AppProps) {
-    return (
-        <Provider store={store}>
-            <Component {...pageProps} />
-        </Provider>
-    );
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
 }
 
 export default App;

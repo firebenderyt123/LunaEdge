@@ -3,13 +3,13 @@ import { Layout } from "@components/ordinary";
 import { HugeSearch } from "@components/smart";
 
 const Home: NextPage = () => {
-    return (
-        <>
-            <Layout>
-                <HugeSearch />
-            </Layout>
-        </>
-    );
+  return (
+    <>
+      <Layout>
+        <HugeSearch />
+      </Layout>
+    </>
+  );
 };
 
 export default Home;

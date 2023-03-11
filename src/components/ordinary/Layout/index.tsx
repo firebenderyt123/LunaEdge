@@ -1,15 +1,13 @@
 import React from "react";
 
-import { Header, Footer } from "@components/simple";
+import { MetaTags, Header, Footer } from "@components/simple";
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<{ children: any }> = ({ children }) => {
   return (
-    <div id="main">
-      <div className="background"></div>
-      <Header />
-      <main className="container">{children}</main>
-      <Footer />
-    </div>
+    <>
+      <MetaTags />
+      {children}
+    </>
   );
 };
 

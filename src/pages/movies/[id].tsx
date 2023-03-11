@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 
 import { getMovieInfo } from "@store/effects/movieEffects/getMovieInfo";
-import { Layout } from "@components/ordinary";
 import { Loader, Error } from "@components/simple";
 import { Image } from "@components/ui";
 
@@ -70,11 +69,11 @@ const MoviePage: NextPage = ({ movieId }) => {
   ) : null;
 
   return (
-    <Layout>
+    <>
       {errorBlock}
       {contentBlock}
       {loadingBlock}
-    </Layout>
+    </>
   );
 };
 

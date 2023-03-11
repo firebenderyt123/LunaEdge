@@ -43,7 +43,7 @@ const HugeSearch: React.FC = () => {
             placeholder="Search movies"
             className="form-control"
           />
-          <button className="btn btn-dark" type="submit">
+          <button className="btn btn-warning" type="submit">
             Search
           </button>
         </form>

@@ -22,7 +22,8 @@ $theme-colors: (
   "gray-dark": $gray-800,
 );
 
-@import "/node_modules/bootstrap/scss/bootstrap.scss";
+@import "bootstrap/scss/bootstrap.scss";
+@import "animate.css/animate.min.css";
 
 $backgroundImage: "~@images/background.png";
 
